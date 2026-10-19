@@ -1,0 +1,11 @@
+case,question,faithfulness,contextual recall,contextual precision,answer relevancy,composite,passed_all_metrics
+1,I booked through an online travel agency. Who handles my cancellation and refund?,0.9774583384164923,0.9010882956773083,0.7705268358865797,0.977729986117469,0.9170338567659091,True
+2,Does a member discount automatically mean I can cancel for free?,0.9969324198289324,0.9668880260371008,0.7966609735828605,0.994815453335022,0.9489436388329779,True
+3,How many people can stay in a Double Queen room?,1.0,0.986339160997378,0.950390617052908,0.9981453435487883,0.9862919823696836,True
+4,What exactly is included in an Accessible King room?,0.9849971175657576,0.8873162242561514,0.3842951290961914,0.6005146891890615,0.7635400108691036,False
+5,"I am driving to Atlanta, and my friend is driving to Miami. What are the parking fees at those two hotels?",1.0,0.9607660589762869,0.6725996882590201,0.8705718622211946,0.8988258248401146,False
+6,Is breakfast free at the Miami Brickell property?,0.990939529461649,0.0025178841700601857,0.0,0.2592797934665857,0.3993142650474093,False
+7,Can I move my Advance Purchase reservation to next month?,0.9798186777739619,0.9909907006038049,0.8866547423043329,0.9843895102554543,0.9648930628837954,True
+8,I need to leave at 2 PM from Denver. What happens if the hotel approves late checkout?,1.0,1.0,0.8197718257101645,0.8845249324984703,0.940859351641727,True
+9,My dog is not a service animal. What is the pet charge at ASH-CHI Loop?,0.9952574126822433,0.861121274543976,0.7658134803059712,1.0,0.9167831091359735,True
+10,The pending hold on my card is larger than the final bill. When will I get the difference back?,0.9923039164303974,0.9461016779312315,0.8137501245817671,0.9300745578941243,0.9325967267286251,True
