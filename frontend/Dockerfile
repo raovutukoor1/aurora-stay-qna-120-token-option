@@ -9,11 +9,18 @@ WORKDIR /app
 # Copy all files from the current directory to the container's /app directory
 COPY . .
 
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    BACKEND_URL=http://host.docker.internal:7860
+
 # Upgrade pip
 RUN pip install --no-cache-dir --upgrade pip
 
 # Install Python dependencies listed in requirements.txt
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+EXPOSE 8501
 
 # Run the Streamlit application on port 8501
 # 0.0.0.0 makes the application accessible outside the container
