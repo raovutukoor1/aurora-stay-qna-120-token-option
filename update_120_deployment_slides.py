@@ -20,7 +20,7 @@ REPLACEMENTS = {
     "Binds Streamlit to 0.0.0.0:8501 for Codespaces or container access.":
         "Binds Streamlit to 0.0.0.0:8501 for Codespaces or container access; EXPOSE 8501 makes the service discoverable.",
     "The backend address is supplied through BACKEND_URL; local default is http://localhost:5000.":
-        "The frontend does not handle API keys; it sends requests through BACKEND_URL. In Codespaces, this points to the backend forwarded URL on port 7860; local non-Docker tests may use port 5000.",
+        "Frontend requests use BACKEND_URL; API keys stay in the backend. Codespaces uses the backend URL on port 7860; local tests may use port 5000.",
     "Validated locally with Streamlit on port 8501 and the Flask API on port 5000.":
         "Validated in Codespaces with Streamlit on port 8501 and the Dockerized Flask API on port 7860.",
     "Set BACKEND_URL at runtime so the frontend can call the backend service or forwarded port.":
