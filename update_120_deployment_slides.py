@@ -25,6 +25,8 @@ REPLACEMENTS = {
         "Validated in Codespaces with Streamlit on port 8501 and the Dockerized Flask API on port 7860.",
     "Set BACKEND_URL at runtime so the frontend can call the backend service or forwarded port.":
         "The image defaults BACKEND_URL to http://host.docker.internal:7860; override it with the backend Codespace URL when needed.",
+    "XSRF protection is disabled in the supplied deployment command to simplify external access.":
+        "XSRF protection is disabled for this POC only; enable it in production deployments.",
     "Repository: github.com/raovutukoor1/aurora-stay-qna.":
         "Repository: github.com/raovutukoor1/aurora-stay-qna-120-token-option.",
     "Current checked-out commit: b11ab14 — Improve RAG retrieval for breakfast and advance purchase cases.":
