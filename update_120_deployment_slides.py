@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from pptx import Presentation
+from pptx.dml.color import RGBColor
 
 
 ROOT = Path(__file__).resolve().parent
@@ -54,6 +55,9 @@ def replace_runs(presentation):
                 for run in paragraph.runs:
                     for old, new in REPLACEMENTS.items():
                         run.text = run.text.replace(old, new)
+                    if "Evaluation artifacts:" in run.text:
+                        run.font.color.rgb = RGBColor(0, 156, 166)
+                        run.font.bold = True
 
 
 def main():
