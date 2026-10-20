@@ -26,7 +26,9 @@ HuggingFaceEmbeddings( \
     model_name='HarishMaths/Hotel-Policy-Embedding', \
     model_kwargs={'device': 'cpu'}, \
     encode_kwargs={'normalize_embeddings': True} \
-)"
+    ); \
+from sentence_transformers import CrossEncoder; \
+CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')"
 
 # Force offline mode at runtime so it uses the cached model
 ENV TRANSFORMERS_OFFLINE=1
