@@ -12,16 +12,26 @@ The latest held-out run used `k=5`, `temperature=0.0`, `top_p=1.0`, and
 
 1. Create a Codespace from the `main` branch.
 2. Add `OPENAI_API_KEY` and, if required, `OPENAI_BASE_URL` as Codespaces secrets.
-3. Build and run the backend:
+3. Build and run both services:
 
 ```bash
-cd backend
-docker build -t aurora-stays-backend .
-docker run --rm -p 7860:7860 -e OPENAI_API_KEY -e OPENAI_BASE_URL aurora-stays-backend
+./docker.sh start
 ```
 
-4. Set port 7860 to Public and use its forwarded URL as `BACKEND_URL`.
-5. Run the frontend from `frontend/` or use its Dockerfile on port 8501.
+The backend uses host networking so it can use the Codespace's working DNS
+resolver. The frontend stays on a Docker bridge network and reaches the backend
+through `host.docker.internal`. Port 7860 is the backend's fixed listen port;
+the frontend port can be changed with `FRONTEND_PORT`.
+
+4. Set port 8501 to Public and open the forwarded frontend URL.
+5. Run an end-to-end health check and sample question from the frontend
+   container:
+
+```bash
+./docker.sh test
+```
+
+To stop both containers, run `./docker.sh stop`.
 
 The FAISS index is stored at `backend/faiss_index`. Do not commit API keys,
 GitHub tokens, local config files, or Hugging Face caches.
