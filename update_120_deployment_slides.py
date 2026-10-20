@@ -16,7 +16,7 @@ REPLACEMENTS = {
     "TRANSFORMERS_OFFLINE=1 and HF_HUB_OFFLINE=1 prevent runtime model downloads; EXPOSE 7860 receives Codespaces traffic.":
         "The Transformers runtime, used through sentence-transformers, loads the cached embedding model; offline flags prevent runtime downloads, and EXPOSE 7860 receives Codespaces traffic.",
     "Docker command: gunicorn -w 1 --timeout 120 -b 0.0.0.0:7860 app:rag_api.":
-        "Container startup command: Gunicorn launches app:rag_api with one worker on 0.0.0.0:7860 and a 120-second timeout.",
+        "The backend API is exposed on port 7860 for Codespaces traffic.",
     "Binds Streamlit to 0.0.0.0:8501 for Codespaces or container access.":
         "Binds Streamlit to 0.0.0.0:8501 for Codespaces or container access; EXPOSE 8501 makes the service discoverable.",
     "The backend address is supplied through BACKEND_URL; local default is http://localhost:5000.":
