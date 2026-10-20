@@ -31,11 +31,13 @@ REPLACEMENTS = {
     "Repository: github.com/raovutukoor1/aurora-stay-qna.":
         "Repository: github.com/raovutukoor1/aurora-stay-qna-120-token-option.",
     "Current checked-out commit: b11ab14 — Improve RAG retrieval for breakfast and advance purchase cases.":
-        "Current deployment commit: d7a7e3f — fixed the 120-token Docker runtime configuration.",
+        "Repository contents are version-controlled in GitHub.",
+    "Evaluation artifacts: executed 120/16 notebook and reports/notebook_120_16_token_safe_test_cases.csv; presentation source and generated PPTX/PDF are retained.":
+        "Evaluation artifact: executed 120/16 notebook.",
     "Validated local endpoints: frontend http://localhost:8501 and backend http://127.0.0.1:5000.":
         "Validated public endpoints: frontend port 8501 and backend port 7860; both returned HTTP 200.",
     "Live smoke tests: Streamlit frontend HTTP 200 and backend readiness HTTP 200.":
-        "Live Codespaces smoke tests: frontend HTTP 200, backend readiness HTTP 200, answer HTTP 200, and answer-with-evidence HTTP 200 with 3 evidence chunks.",
+        "Live Codespaces smoke tests passed on 20 October 2026: frontend, readiness, answer, and answer-with-evidence endpoints returned HTTP 200.",
     "https://didactic-fiesta-4qjv9j6r66pj3jxq6-8501.app.github.dev":
         "https://turbo-zebra-4qqj6wr7pv573xpr-8501.app.github.dev",
     "https://didactic-fiesta-4qjv9j6r66pj3jxq6-5000.app.github.dev":
@@ -55,7 +57,7 @@ def replace_runs(presentation):
                 for run in paragraph.runs:
                     for old, new in REPLACEMENTS.items():
                         run.text = run.text.replace(old, new)
-                    if "Evaluation artifacts:" in run.text:
+                    if "Evaluation artifact:" in run.text or "Evaluation artifacts:" in run.text:
                         run.font.color.rgb = RGBColor(0, 156, 166)
                         run.font.bold = True
 
